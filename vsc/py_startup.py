@@ -11,6 +11,9 @@ from extract.ext_retencion import extraer_retencion
 from extract.ext_rotacion import extraer_rotacion
 from extract.ext_uso import extraer_uso
 from load.load_asistencia import cargar_asistencia_clases
+from load.load_adherencia import cargar_adherencia_planes_nutricionales
+from load.load_compras import cargar_compras_suplementos_nutricionales
+from load.load_evaluaciones import cargar_evaluaciones_rendimiento
 
 try:
     adh = extraer_adherencia()
@@ -48,6 +51,15 @@ try:
 
     cargar_asistencia_clases()
     print("Datos de asistencia cargados al sor")
+
+    cargar_adherencia_planes_nutricionales()
+    print("Datos de adherencia cargados al sor")
+
+    cargar_compras_suplementos_nutricionales()
+    print("Datos de compras cargados al sor")
+
+    cargar_evaluaciones_rendimiento()
+    print("Datos de evaluaciones cargados al sor")
     
 except:
     traceback.print_exc()
